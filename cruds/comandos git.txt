@@ -1,0 +1,16 @@
+-> Começar a trabahar
+
+1º passo - git checkout develop 			- Entrar na branch do develop
+2º Passo - git pull 					- verificar alterações e baixa no develop
+3º passo - git checkout "sua branch"			- Entrar na sua branch
+4º passo - git merge "destino" "origem"			- Fazer a merge do develop para sua branch
+
+-> Termino do trabalho
+
+1º passo - Sempre ter que estar na sua branch, caso contrario chame alguem.
+2º passo - git add *					- Preparando todos os aqruivos para subir
+3º passo - git commit -m "comentario"			- Fazer comentario antes de subir
+4º passo - git push					- subir as alterações para o github "na sua branch"
+5º passo - git checkout develop				- Mudar para a branch develop
+6º passo - git pull					- Verificar alterações e baixa
+7º passo - git merge develop "sua branch"		- Fazer a merge da "sua branch" para sua develop

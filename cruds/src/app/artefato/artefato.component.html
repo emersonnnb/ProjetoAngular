@@ -1,0 +1,97 @@
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="formArtefato">
+    <div class="m-4">
+      <div class="row">
+        <h1 class="fw-bold col-md-10 col-sm-1">Incluir artefato</h1>
+        <button class="col-md-2 col-sm-6 bg-dark" (click)="addArtefato()" mat-flat-button style="color: white;">
+          <mat-icon style="font-size: 18px">save</mat-icon>{{actionBtn}}
+        </button>
+      </div>
+
+      <div class="position-relative ">
+        <mat-tab-group [selectedIndex]="1" dynamicHeight>
+          <mat-tab label="Procedimento nº: 009-00999/AAAA" [disabled]="true"></mat-tab>
+          <mat-tab label="Identificação">
+
+            <div class="row my-4">
+
+              <mat-form-field class="col-md-2 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Situação</mat-label>
+                <mat-select placeholder="Selecione" formControlName="situacao">
+                  <mat-option value="Ativo">Ativo</mat-option>
+                  <mat-option value="Inativo">Inativo</mat-option>
+                  <mat-option value="Cancelado">Cancelado</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+
+              <mat-form-field class="col-md-5 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Classe</mat-label>
+                <mat-select placeholder="Selecione" formControlName="classe">
+                  <mat-option value="Ativo">Ativo</mat-option>
+                  <mat-option value="Inativo">Inativo</mat-option>
+                  <mat-option value="Cancelado">Cancelado</mat-option>
+                  <mat-option value="Aguardando">Aguardando</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-5 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Tipo</mat-label>
+                <mat-select placeholder="Selecione" formControlName="tipo">
+                  <mat-option value="Ativo">Ativo</mat-option>
+                  <mat-option value="Inativo">Inativo</mat-option>
+                  <mat-option value="Cancelado">Cancelado</mat-option>
+                  <mat-option value="Aguardando">Aguardando</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-2 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Quantidade</mat-label>
+                <input type="number" onKeyDown="false" matInput placeholder="999.999" formControlName="quantidade"
+                  required>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-2 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Valor estimado</mat-label>
+                <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align : 'left' }"
+                  placeholder="R$ 999.999,99" matInput formControlName="valorEstimado" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-3 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Apresentante</mat-label>
+                <input placeholder="Maria da Silva" matInput formControlName="apresentante" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-3 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Proprietário</mat-label>
+                <input placeholder="Maria da Silva" matInput formControlName="proprietario" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-7 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Descrição</mat-label>
+                <textarea matInput formControlName="descricao" rows="5"
+                  value="Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Per aumento de cachacis, eu reclamis.Paisis, filhis, espiritis santis.Casamentiss faiz malandris se pirulitá.
+            Delegadis gente finis, bibendum egestas augue arcu ut est.Manduma pindureta quium dia nois paga.Mé faiz elementum girarzis, nisi eros vermeio.Aenean aliquam molestie leo, vitae iaculis nisl.
+            Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Per aumento de cachacis, eu reclamis.Paisis, filhis, espiritis santis.Casamentiss faiz malandris se pirulitá.
+            Delegadis gente finis, bibendum egestas augue arcu ut est.Manduma pindureta quium dia nois paga.Mé faiz elementum girarzis, nisi eros vermeio.Aenean aliquam molestie leo, vitae iaculis nisl."></textarea>
+
+              </mat-form-field>
+
+              <mat-form-field class="col-md-7 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Observação</mat-label>
+                <textarea matInput rows="5" name="observacao" formControlName="observacao"></textarea>
+              </mat-form-field>
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <span>Delitos relacionados</span>
+              <mat-icon class="head-icon">warning</mat-icon>
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+        <button (click)="closeDialog()" class="exit-button button d-none d-sm-block" mat-button>Sair</button>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>

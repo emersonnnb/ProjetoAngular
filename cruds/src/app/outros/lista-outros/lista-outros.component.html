@@ -1,0 +1,102 @@
+<div class="mat-elevation-z8 mt-2">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="situacao">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Situação</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.situacao }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="classe">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Classe</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.classe }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Tipo</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.tipo }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="valorEstimado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Valor Estimado</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.valorEstimado | currency:'R$ ' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="numerodeSerie">
+      <th hidden mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>N° de Serie</strong> </th>
+      <td hidden mat-cell *matCellDef="let row"> {{ row.numerodeSerie }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="marca">
+      <th hidden mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Marca</strong> </th>
+      <td hidden mat-cell *matCellDef="let row"> {{ row.marca }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="modelo">
+      <th hidden mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Modelo</strong> </th>
+      <td hidden mat-cell *matCellDef="let row"> {{ row.modelo }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantidade">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Quantidade</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.quantidade }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="unidadedeMedida">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Unidade de Medida</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.unidadedeMedida }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acondicionamento">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Acondicionamento</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.acondicionamento }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <th hidden mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Descrição</strong> </th>
+      <td hidden mat-cell *matCellDef="let row"> {{ row.descricao }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="apresentante">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Apresentante</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.apresentante }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="proprietario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Proprietario</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.proprietario }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="observacao">
+      <th hidden mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Observação</strong> </th>
+      <td hidden mat-cell *matCellDef="let row"> {{ row.observacao }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Ação</strong> </th>
+
+      <td mat-cell *matCellDef="let row">
+
+        <button mat-icon-button (click)="editOutros(row)" color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="deleteOutros(row.id)" color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="bg-light border-bottom p-2 d-flex justify-content-center ">
+
+    <a (click)="openOutros()" class="d-flex align-items-center"
+      style="text-decoration: none; color: inherit; cursor: pointer;">
+      <mat-icon>add_circle_outline</mat-icon>&nbsp;Incluir Outros Objetos
+    </a>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" class="d-flex justify-content-start">
+  </mat-paginator>
+</div>

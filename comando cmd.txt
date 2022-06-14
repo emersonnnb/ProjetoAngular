@@ -1,0 +1,12 @@
+git init
+
+git add * ou nome do arquivo
+
+git commit -m "comentário do q foi alterado"
+
+git push origin Matheus
+
+para pegar é git pull 
+
+trocar git checkout Branch
+

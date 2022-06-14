@@ -1,0 +1,81 @@
+<div class="mat-elevation-z8 mt-2">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="situacao">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"><strong> Situação </strong></th>
+      <td mat-cell *matCellDef="let row"> {{ row.situacao }} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"><strong> Marca </strong></th>
+      <td mat-cell *matCellDef="let row"> {{ row.marca }} </td>
+    </ng-container>
+
+  
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"><strong> Modelo </strong></th>
+      <td mat-cell *matCellDef="let row"> {{ row.modelo }} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="cor">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"><strong>cor</strong></th>
+      <td mat-cell *matCellDef="let row"> {{ row.cor }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="valorEstimado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"><strong>Valor Estimado</strong></th>
+      <td mat-cell *matCellDef="let row"> {{ row.valorEstimado | currency:'R$ ' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="chassi">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"><strong>Chassi</strong></th>
+      <td mat-cell *matCellDef="let row"> {{ row.chassi }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="apresentante">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"><strong>Apresentante</strong></th>
+      <td mat-cell *matCellDef="let row"> {{ row.apresentante }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="proprietario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"> <strong>Proprietario</strong> </th>
+      <td mat-cell *matCellDef="let row"> {{ row.proprietario }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="observacao">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"><strong> Observação </strong></th>
+      <td mat-cell *matCellDef="let row"> {{ row.observacao }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-dark"><strong> Ação </strong></th>
+      <td mat-cell *matCellDef="let row">
+
+        <button mat-icon-button (click)="editBicicleta(row)" color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="deleteBicicleta(row.id)" color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="bg-light border-bottom p-2 d-flex justify-content-center ">
+
+    <a (click)="openBicicleta()" class="d-flex align-items-center"
+      style="text-decoration:none;color: inherit;cursor:pointer;">
+      <mat-icon>add_circle_outline</mat-icon>&nbsp;Incluir Bicicleta
+    </a>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"
+    class="d-flex justify-content-start">teste
+  </mat-paginator>
+</div>
+

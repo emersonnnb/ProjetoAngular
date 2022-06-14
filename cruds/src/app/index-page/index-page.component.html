@@ -1,0 +1,42 @@
+<mat-tab-group [selectedIndex]="2">
+  <mat-tab label="Delitos">Delitos </mat-tab>
+  <mat-tab label="Qualificados"> Qualificados </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span>Bens</span>
+      <mat-icon class="head-icon" style="font-size:15px; padding-top: 5px;">warning</mat-icon>
+    </ng-template>
+    <mat-tab-group [selectedIndex]="0">
+
+      <mat-tab label="Armamentos">
+        <app-lista-artefato></app-lista-artefato>
+      </mat-tab>
+
+      <mat-tab label="Ativos Financeiros">
+        <app-lista-ativo-financeiro></app-lista-ativo-financeiro> 
+      </mat-tab>
+      
+      <mat-tab label="Bicicletas">
+        <app-lista-bicicleta></app-lista-bicicleta>
+      </mat-tab>
+      <mat-tab label="Dispositivos Móveis"> 
+        <app-lista-dispositivos-moveis></app-lista-dispositivos-moveis> 
+      </mat-tab>
+      <mat-tab label="Documentos"> Documentos </mat-tab>
+      <mat-tab label="Entorpecentes"> Entorpecentes</mat-tab>
+      <mat-tab label="Explosivos"> Explosivos </mat-tab>
+      <mat-tab label="Imóveis"> Imóveis </mat-tab>
+      <mat-tab label="Outros bens">
+        <app-lista-outros></app-lista-outros>
+      </mat-tab>
+      <mat-tab label="Semoventes"> Semoventes </mat-tab>
+      <mat-tab label="Veículos"> Veículos </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+
+  <mat-tab label="Peças"></mat-tab>
+</mat-tab-group>
+
+<button class="return-button button d-none d-sm-block" mat-button>Voltar</button>
+<button class="exit-button button d-none d-sm-block" mat-button>Sair</button>

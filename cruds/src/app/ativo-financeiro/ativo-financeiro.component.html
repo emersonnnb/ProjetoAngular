@@ -1,0 +1,134 @@
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="formFinanceiro">
+    <div class="m-4">
+      <div class="row">
+        <h1 class="fw-bold col-md-10 col-sm-1">Incluir Ativo Financeiro</h1>
+        <button class="col-md-2 col-sm-6 bg-dark" (click)="addFinanceiro()" mat-flat-button style="color: white">
+          <mat-icon style="font-size: 18px">save</mat-icon>{{actionBtn}}
+        </button>
+      </div>
+
+      <div class="position-relative">
+        <mat-tab-group [selectedIndex]="1" dynamicHeight>
+          <mat-tab label="Procedimento nº: 009-00999/AAAA" [disabled]="true"></mat-tab>
+          <mat-tab label="Identificação">
+
+            <div class="row my-4">
+
+              <mat-form-field class="col-md-2 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Situação</mat-label>
+                <mat-select placeholder="Selecione" formControlName="situacao">
+                  <mat-option value="Ativo">Ativo</mat-option>
+                  <mat-option value="Inativo">Inativo</mat-option>
+                  <mat-option value="Cancelado">Cancelado</mat-option>
+                  <mat-option value="Aguardando">Aguardando</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-5 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Classe</mat-label>
+                <mat-select placeholder="Selecione" formControlName="classe">
+                  <mat-option value="Ativo">Ativo</mat-option>
+                  <mat-option value="Inativo">Inativo</mat-option>
+                  <mat-option value="Cancelado">Cancelado</mat-option>
+                  <mat-option value="Aguardando">Aguardando</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-5 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Tipo</mat-label>
+                <mat-select placeholder="Selecione" formControlName="tipo">
+                  <mat-option value="Ativo">Ativo</mat-option>
+                  <mat-option value="Inativo">Inativo</mat-option>
+                  <mat-option value="Cancelado">Cancelado</mat-option>
+                  <mat-option value="Aguardando">Aguardando</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-2 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Quantidade</mat-label>
+                <input type="number" onKeyDown="false" matInput
+                  placeholder="999.999.999.9999999999" formControlName="quantidade" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-3 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Unidade de medida</mat-label>
+                <mat-select placeholder="Selecione" formControlName="unidadedeMedida">
+                  <mat-option value="Ativo">Metro</mat-option>
+                  <mat-option value="Inativo">Kilograma</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-3 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Valor estimado</mat-label>
+                <input placeholder="999.999.99" matInput formControlName="valorEstimado" prefix="R$ "
+                  mask="0,00 || 00,00 || 000,00 || 0.000,00 || 00.000,00 || 000.000,00"/>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-2 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Moeda</mat-label>
+                <mat-select placeholder="Selecione" formControlName="moeda">
+                  <mat-option value="Ativo">Real</mat-option>
+                  <mat-option value="Inativo">Dolar</mat-option>
+                  <mat-option value="Cancelado">Euro</mat-option>
+                  <mat-option value="Aguardando">Libra</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-2 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Proprietário (Titular)</mat-label>
+                <mat-select placeholder="Selecione" formControlName="proprietarioTitular">
+                  <mat-option value="Maria Da Silva">Maria Da Silva</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-8 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Descrição</mat-label>
+                <textarea matInput formControlName="descricao" rows="6" value=""></textarea>
+              </mat-form-field>
+
+              <div class="col-4">
+                <div class="row">
+                  <mat-form-field class="col-md-6 col-sm-12" appearance="outline" floatLabel="always">
+                    <mat-label>Beneficiário</mat-label>
+                    <mat-select placeholder="Selecione" formControlName="beneficiario">
+                      <mat-option value="Maria Da Silva">Maria Da Silva</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-6 col-sm-12" appearance="outline" floatLabel="always">
+                    <mat-label>Proprietário (Cotitular)</mat-label>
+                    <mat-select placeholder="Selecione" formControlName="proprietarioCotitular">
+                      <mat-option value="Claúdio da Silva">Claúdio da Silva</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <div class="col-6"></div>
+
+                  <mat-form-field class="col-md-6 col-sm-12" appearance="outline" floatLabel="always">
+                    <mat-label>Proprietário (Cootitular)</mat-label>
+                    <mat-select placeholder="Selecione" formControlName="proprietarioCootitular">
+                      <mat-option value="Claúdio da Silva">Claúdio da Silva</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <mat-form-field class="col-md-8 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Observação</mat-label>
+                <textarea matInput rows="6" name="observacao" formControlName="observacao"></textarea>
+              </mat-form-field>
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <span>Delitos relacionados</span>
+              <mat-icon class="head-icon">warning</mat-icon>
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+        <button (click)="closeDialog()" class="exit-button button d-none d-sm-block" mat-button>Sair</button>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>

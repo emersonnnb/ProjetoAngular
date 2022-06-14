@@ -1,0 +1,92 @@
+<form [formGroup]="formDispositivos">
+  <div class="m-4">
+    <div class="row">
+      <h1 class="fw-bold col-md-10 col-sm-1">Incluir dispositivo móvel</h1>
+      <button class="col-md-2 col-sm-6 bg-dark" [disabled]="formDispositivos.invalid" (click)="addDispositivos()"
+        mat-flat-button style="color: white;">
+        <mat-icon>save</mat-icon>Salvar
+      </button>
+    </div>
+
+    <div class="position-relative">
+      <mat-tab-group [selectedIndex]="1" dynamicHeight>
+        <mat-tab label="Procedimento nº: 009-00999/AAAA" [disabled]="true"></mat-tab>
+
+        <mat-tab label="Identificação">
+          <mat-tab label="Dispositos cadastrados" ></mat-tab>
+          <div class="row my-4">
+
+            <mat-form-field class="col-md-2 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Situação</mat-label>
+              <mat-select formControlName="situacao" placeholder="Arrecadada">
+                <mat-option value="Ativo">Ativo</mat-option>
+                <mat-option value="Inativo">Inativo</mat-option>
+                <mat-option value="Cancelado">Cancelado</mat-option>
+                <mat-option value="Aguardando">Aguardando</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-3 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Apresentante</mat-label>
+              <mat-select formControlName="apresentante" placeholder="Maria da Silva">
+                <mat-option value="José">José</mat-option>
+                <mat-option value="Eduarda">Eduarda</mat-option>
+                <mat-option value="Mario">Mario</mat-option>
+                <mat-option value="Silva">Silva</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-3 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Proprietário</mat-label>
+              <mat-select formControlName="proprietario" placeholder="Maria da Silva">
+                <mat-option value="José">José</mat-option>
+                <mat-option value="Eduarda">Eduarda</mat-option>
+                <mat-option value="Mário">Mário</mat-option>
+                <mat-option value="Silva">Silva</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div class="col-md-4 col-12 d-flex align-items-start pt-3">
+
+              <mat-radio-group style="font-size: 13px;" formControlName="bloqueio">
+                <mat-label>Autoriza o bloqueio </mat-label> &nbsp;
+                <mat-radio-button value="Sim">Sim</mat-radio-button> &nbsp;
+                <mat-radio-button value="Não">Não</mat-radio-button>
+              </mat-radio-group>
+
+              <mat-radio-group style="font-size: 13px; margin-left: 20px;" formControlName="seguro">
+                <mat-label>Possui seguro </mat-label> &nbsp;
+                <mat-radio-button value="Sim">Sim</mat-radio-button> &nbsp;
+                <mat-radio-button value="Nao">Não</mat-radio-button>
+              </mat-radio-group>
+
+            </div>
+
+            <mat-form-field class="col-md-8 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Observação</mat-label>
+              <textarea formControlName="observacao" matInput rows="6"></textarea>
+            </mat-form-field>
+            <mat-form-field class="col-md-4 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Seguradora</mat-label>
+              <mat-select formControlName="seguradora" placeholder="Selecione">
+                <mat-option value="José">José</mat-option>
+                <mat-option value="Eduarda">Eduarda</mat-option>
+                <mat-option value="Mário">Mário</mat-option>
+                <mat-option value="Silva">Silva</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <span>Delitos relacionados</span>
+            </ng-template>
+
+
+          </mat-tab>
+        </mat-tab>
+      </mat-tab-group>
+      <button class="exit-button button" mat-button>Sair</button>
+    </div>
+  </div>
+</form>

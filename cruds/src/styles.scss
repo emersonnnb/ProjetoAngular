@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-select-arrow {
+    color: #f9d402 ;
+  }
+
+ /* Border */
+ .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgb(129, 125, 125) ;
+}
+
+span.mat-placeholder-required.ng-star-inserted{
+  color: red;
+}
+

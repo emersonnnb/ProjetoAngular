@@ -1,0 +1,121 @@
+<mat-dialog-content class="mat-typography">
+ <form [formGroup]="formOutros">
+    <div class="m-4">
+      <div class="row">
+        <h1 class="fw-bold col-md-10 col-sm-1">Incluir outros objetos</h1>
+        <button class="col-md-2 col-sm-6 bg-dark" (click)="addOutros()"
+        mat-flat-button style="color: white;">
+          <mat-icon style="font-size: 18px">save</mat-icon>Salvar
+        </button>
+      </div>
+
+      <div class="position-relative">
+        <mat-tab-group [selectedIndex]="1" dynamicHeight>
+          <mat-tab label="Procedimento nº: 009-00999/AAAA" [disabled]="true">
+          </mat-tab>
+          <mat-tab label="Identificação">
+
+        <!--Linha 1/Primeira linha-->
+          <div class="row my-4">
+            <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Situação </mat-label>
+              <mat-select formControlName="situacao" placeholder="Subtraída">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Classe </mat-label>
+              <mat-select formControlName="classe" placeholder="Outros">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Tipo </mat-label>
+              <mat-select formControlName="tipo" placeholder="Notebook">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Valor estimado</mat-label>
+              <input matInput formControlName="valorEstimado" prefix="R$ "
+              mask="0,00 || 00,00 || 000,00 || 0.000,00 || 00.000,00 || 000.000,00">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>N° de Série</mat-label>
+              <input matInput type="number" formControlName="numerodeSerie">
+            </mat-form-field>
+
+        <!--Linha 2/Segunda linha-->
+            <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Marca</mat-label>
+              <input matInput formControlName="marca">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Modelo</mat-label>
+              <input matInput formControlName="modelo">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Quantidade </mat-label>
+              <input matInput type="number" formControlName="quantidade" placeholder="999.999">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Unidade de Medida </mat-label>
+              <input matInput formControlName="unidadedeMedida" placeholder="Unitário">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Acontecimento </mat-label>
+              <mat-select  formControlName="acondicionamento" placeholder="Embalagem">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+        <!--Linha 3/Terceira linha-->
+            <mat-form-field class="col-md-7 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Descrição </mat-label>
+              <textarea matInput rows="5" formControlName="descricao" placeholder="Ex. It makes me feel">
+              </textarea>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Apresentante </mat-label>
+              <input matInput formControlName="apresentante" placeholder="Maria da Silva">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Proprietário </mat-label>
+              <input matInput formControlName="proprietario" placeholder="Maria da Silva">
+            </mat-form-field>
+
+        <!--Linha 4/Quarta linha-->
+            <mat-form-field class="col-md-7 col-sm-12" floatLabel="always" appearance="outline">
+              <mat-label>Observação</mat-label>
+              <textarea matInput rows="5"  formControlName="observacao" placeholder="Ex. It makes me feel...">
+              </textarea>
+            </mat-form-field>
+          </div>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <span>Delitos Relacionados</span>
+              <mat-icon class="head-icon">warning</mat-icon>
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+        <button (click)="closeDialog()" class="exit-button button d-none d-sm-block" mat-button>Sair</button>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>

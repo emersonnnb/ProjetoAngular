@@ -1,0 +1,283 @@
+{
+  "artefato": [
+    {
+      "situacao": "Inativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 234,
+      "valorEstimado": "3234",
+      "apresentante": "asc",
+      "proprietario": "xz zx",
+      "descricao": "zx z ",
+      "observacao": "zx z ",
+      "id": 2
+    },
+    {
+      "situacao": "Inativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 2344234,
+      "valorEstimado": "233",
+      "apresentante": "dxsd",
+      "proprietario": "sdsd",
+      "descricao": "sdv",
+      "observacao": "sdvds",
+      "id": 3
+    },
+    {
+      "situacao": "Inativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 2134234,
+      "valorEstimado": "32243",
+      "apresentante": "asdc",
+      "proprietario": "sadvsv",
+      "descricao": "sdvsd",
+      "observacao": "sdvsdv",
+      "id": 4
+    },
+    {
+      "situacao": "Cancelado",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 23432,
+      "valorEstimado": "111",
+      "apresentante": "sdv ",
+      "proprietario": "sdvsdv",
+      "descricao": "sd",
+      "observacao": "dvsv",
+      "id": 5
+    },
+    {
+      "situacao": "Inativo",
+      "classe": "Inativo",
+      "tipo": "Ativo",
+      "quantidade": 234234,
+      "valorEstimado": "2323",
+      "apresentante": "dvs",
+      "proprietario": "sdvds",
+      "descricao": "sdd",
+      "observacao": "sdvdsv",
+      "id": 6
+    },
+    {
+      "situacao": "Ativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 234,
+      "valorEstimado": "2332",
+      "apresentante": "dcv",
+      "proprietario": "dv",
+      "descricao": "sdv",
+      "observacao": "dvsdv",
+      "id": 7
+    },
+    {
+      "situacao": "Ativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 234,
+      "valorEstimado": "2332",
+      "apresentante": "dcv",
+      "proprietario": "dv",
+      "descricao": "sdv",
+      "observacao": "dvsdv",
+      "id": 8
+    },
+    {
+      "situacao": "Ativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 234,
+      "valorEstimado": "2332",
+      "apresentante": "dcv",
+      "proprietario": "dv",
+      "descricao": "sdv",
+      "observacao": "dvsdv",
+      "id": 9
+    },
+    {
+      "situacao": "Ativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 234,
+      "valorEstimado": "2332",
+      "apresentante": "dcv",
+      "proprietario": "dv",
+      "descricao": "sdv",
+      "observacao": "dvsdv",
+      "id": 10
+    },
+    {
+      "situacao": "Ativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 234,
+      "valorEstimado": "2332",
+      "apresentante": "dcv",
+      "proprietario": "dv",
+      "descricao": "sdv",
+      "observacao": "dvsdv",
+      "id": 11
+    },
+    {
+      "situacao": "Ativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 234,
+      "valorEstimado": "2332",
+      "apresentante": "dcv",
+      "proprietario": "dv",
+      "descricao": "sdv",
+      "observacao": "dvsdv",
+      "id": 12
+    },
+    {
+      "situacao": "Inativo",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 345,
+      "valorEstimado": "34532",
+      "apresentante": "dsvd",
+      "proprietario": "dv",
+      "descricao": "dv",
+      "observacao": "sdv",
+      "id": 13
+    },
+    {
+      "situacao": "Cancelado",
+      "classe": "Inativo",
+      "tipo": "Inativo",
+      "quantidade": 2121,
+      "valorEstimado": "1222",
+      "apresentante": "sa",
+      "proprietario": "sa",
+      "descricao": "wswqs",
+      "observacao": "wqswqsw",
+      "id": 14
+    }
+  ],
+  "Financeiro": [
+    {
+      "situacao": "Ativo",
+      "classe": "Ativo",
+      "tipo": "Ativo",
+      "quantidade": 212121,
+      "unidadedeMedida": "Ativo",
+      "valorEstimado": "300",
+      "moeda": "Ativo",
+      "proprietarioTitular": "Maria Da Silva",
+      "descricao": "html",
+      "beneficiario": "Maria Da Silva",
+      "proprietarioCotitular": "Claúdio da Silva",
+      "proprietarioCootitular": "Claúdio da Silva",
+      "observacao": "html",
+      "id": 2
+    },
+    {
+      "situacao": "Ativo",
+      "classe": "Ativo",
+      "tipo": "Ativo",
+      "quantidade": 212121,
+      "unidadedeMedida": "Ativo",
+      "valorEstimado": "300",
+      "moeda": "Ativo",
+      "proprietarioTitular": "Maria Da Silva",
+      "descricao": "htm",
+      "beneficiario": "Maria Da Silva",
+      "proprietarioCotitular": "Claúdio da Silva",
+      "proprietarioCootitular": "Claúdio da Silva",
+      "observacao": "html",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "situacao": "Ativo",
+      "classe": "Ativo",
+      "tipo": "Ativo",
+      "quantidade": 3,
+      "unidadedeMedida": "Ativo",
+      "valorEstimado": "250",
+      "moeda": "Ativo",
+      "proprietarioTitular": "Maria Da Silva",
+      "descricao": "htm",
+      "beneficiario": "Maria Da Silva",
+      "proprietarioCotitular": "Claúdio da Silva",
+      "proprietarioCootitular": "Claúdio da Silva",
+      "observacao": "htm"
+    },
+    {
+      "situacao": "Inativo",
+      "classe": "Inativo",
+      "tipo": "Cancelado",
+      "quantidade": 23,
+      "unidadedeMedida": "Ativo",
+      "valorEstimado": "123",
+      "moeda": "Ativo",
+      "proprietarioTitular": "Maria Da Silva",
+      "descricao": "213",
+      "beneficiario": "Maria Da Silva",
+      "proprietarioCotitular": "Claúdio da Silva",
+      "proprietarioCootitular": "Claúdio da Silva",
+      "observacao": "231",
+      "id": 5
+    }
+  ],
+  "bicicleta": [
+    {
+      "id": 1,
+      "situacao": "Ativo",
+      "marca": "SHIMANO/CANGURU",
+      "modelo": "GTS",
+      "cor": "Branca",
+      "valorEstimado": 234342,
+      "chassi": "WERFSC32E4",
+      "apresentante": "SVWE",
+      "proprietario": "SDVSDV",
+      "observacao": "SWVSDBVF "
+    },
+    {
+      "situacao": "Ativo",
+      "marca": "SHIMANO/CANGURU",
+      "modelo": "GTS",
+      "cor": "Verde",
+      "valorEstimado": "3200",
+      "chassi": "Macro",
+      "apresentante": "João",
+      "proprietario": "Matheus",
+      "observacao": "roubada\n",
+      "id": 2
+    }
+  ],
+  "dispositivos": [
+    {
+      "id": 1,
+      "situacao": "Ativo",
+      "apresentante": "Eduarda",
+      "proprietario": "Eduarda",
+      "bloqueio": "Sim",
+      "seguro": "Nao",
+      "observacao": "teste",
+      "seguradora": "José"
+    }
+  ],
+  "outros": [
+    {
+      "id": 2,
+      "situacao": "two",
+      "classe": "two",
+      "tipo": "two",
+      "valorEstimado": 2222,
+      "numerodeSerie": 9784,
+      "marca": "op",
+      "modelo": "po",
+      "quantidade": 3333,
+      "unidadedeMedida": "1L",
+      "acondicionamento": "two",
+      "descricao": "bla bla bla",
+      "apresentante": "ratata",
+      "proprietario": "ratata",
+      "observacao": "bla bla bla "
+    }
+  ]
+}

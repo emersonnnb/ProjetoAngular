@@ -1,0 +1,93 @@
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="formBicicleta">
+    <div class="m-4">
+      <div class="row">
+        <h1 class="fw-bold col-md-10 col-sm-1">Incluir Bicicleta</h1>
+        <button class="col-md-2 col-sm-6 bg-dark" (click)="addBicicleta()" mat-flat-button style="color: white;">
+          <mat-icon style="font-size: 18px">save</mat-icon>{{actionBtn}}
+        </button>
+      </div>
+
+      <div class="position-relative ">
+        <mat-tab-group [selectedIndex]="1" dynamicHeight>
+          <mat-tab label="Procedimento nº: 009-00999/AAAA" [disabled]="true"></mat-tab>
+          <mat-tab label="Identificação">
+
+            <div class="row my-4">
+
+              <mat-form-field class="col-md-2 col-sm-12" appearance="outline" floatLabel="always">
+                <mat-label>Situação</mat-label>
+                <mat-select placeholder="Selecione" formControlName="situacao">
+                  <mat-option value="Ativo">Ativo</mat-option>
+                  <mat-option value="Inativo">Inativo</mat-option>
+                  <mat-option value="Cancelado">Cancelado</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Marca</mat-label>
+              <mat-select formControlName="marca" placeholder="Selecione">
+                <mat-option value="SHIMANO/CANGURU">SHIMANO/CANGURU</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-3 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Modelo</mat-label>
+              <mat-select formControlName="modelo" placeholder="Selecione">
+                <mat-option value="GTS">GTS</mat-option>
+                <mat-option value="Montanha">Montanha</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Cor</mat-label>
+              <mat-select formControlName="cor" placeholder="Selecione">
+                <mat-option value="Branca">Branca</mat-option>
+                <mat-option value="Amarela">Amarela</mat-option>
+                <mat-option value="Preta">Preta</mat-option>
+                <mat-option value="Verde">Verde</mat-option>
+                <mat-option value="Vermelha">Vermelha</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Valor estimado</mat-label>
+              <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align : 'left' }"
+                  placeholder="R$ 999.999,99" matInput formControlName="valorEstimado" />
+              </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Chassi</mat-label>
+              <input matInput formControlName="chassi"/>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-3 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Apresentante</mat-label>
+              <input matInput formControlName="apresentante"/>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Proprietário</mat-label>
+              <input matInput formControlName="proprietario"/>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-7 col-12" appearance="outline" floatLabel="always">
+              <mat-label>Observação</mat-label>
+              <textarea formControlName="observacao" matInput rows="5"></textarea>
+            </mat-form-field>
+
+          </div>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span>Delitos relacionados</span>
+            <mat-icon class="head-icon">warning</mat-icon>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+
+      <button (click)="closeDialog()" class="exit-button button d-none d-sm-block" mat-button>Sair</button>
+    </div>
+  </div>
+</form>
+</mat-dialog-content>

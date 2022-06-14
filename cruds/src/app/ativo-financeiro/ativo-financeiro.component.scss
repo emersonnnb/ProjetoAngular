@@ -1,0 +1,64 @@
+::ng-deep.mat-select-arrow {
+    color: #e8c218 !important;
+  }
+  ::ng-deep.mat-tab-group.mat-primary .mat-ink-bar, ::ng-deep.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #e8c218;
+  }
+
+  ::ng-deep.mat-ink-bar {
+    height: 4px !important;
+  }
+  ::ng-deep.mat-tab-label.mat-focus-indicator, ::ng-deep.mat-tab-disabled .ng-star-inserted{
+    padding:0 !important;
+  }
+
+  ::ng-deep.mat-tab-label.mat-tab-disabled, ::ng-deep.mat-tab-link.mat-tab-disabled {
+    color: black;
+    border-bottom: 4px solid #1ba2e8!important;
+    padding-right: 30px;
+    margin-right: 30px;
+  }
+
+  ::ng-deep.mat-ripple:not(:empty) {
+    margin-right: 30px;
+    border-bottom: 4px solid #d8d8d8;
+  }
+  .head-icon{
+    margin: 0 0 0 7px;
+    color: orange;
+    font-size: 18px;
+  }
+  .exit-button{
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    border-radius: 0;
+    z-index: 1;
+    min-width: 35px;
+    padding: 0;
+    color: #817e7e;
+    }
+    .return-button{
+      position: absolute;
+      top: 8px;
+      right: 50px;
+      border-radius: 0;
+      z-index: 1;
+      min-width: 35px;
+      padding: 0;
+      color: #817e7e;
+      }
+    .button:hover{
+        border-bottom: 4px solid red;
+    }
+
+  /*Desativa setas do input type number*/
+  input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /*Muda a cor do botão salvar quando desativado
+  ::ng-deep.mat-focus-indicator .col-md-2 .col-sm-6, ::ng-deep.bg-dark .mat-flat-button .mat-button-base, ::ng-deep.mat-button-disabled{
+    background-color: rgb(70, 70, 71)!important;
+  }*/
