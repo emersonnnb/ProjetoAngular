@@ -76,7 +76,6 @@ export class ArtefatoComponent implements OnInit {
           this.dialogRef.close('Atualizar')
         },
         error: () => {
-          console.log(this.formArtefato.value);
           alert("Erro ao atualizar!")
         }
       })
