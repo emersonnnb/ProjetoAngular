@@ -68,7 +68,7 @@ export class OutrosComponent implements OnInit {
               this.dialogRef.close('Salvar');
             },
             error: () => {
-              alert("Erro ao cadastrar o produto!")
+              alert("Erro ao cadastrar Outros Bens!")
             }
           })
       }
