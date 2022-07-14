@@ -51,8 +51,12 @@ DROP TABLE artefato,ativo_financeiro,bicicleta,dispositivos_moveis,outros, SITUA
     observacao      varchar(255)
  );
  insert into bicicleta (situacao,marca,modelo,cor,valorEstimado,chassi,apresentante,proprietario,observacao)
-values ('ativo','SHIMANO/CANGURU','GTS','Preta',3200.00,'hhh','Matheus','Robertin')
-3
+values ('ativo','SHIMANO/CANGURU','GTS','Preta',3200.00,'hhh','Matheus','Robertin');
+
+update bicicleta set apresentante = 'Teste1'
+  where id_bicicleta = 1;
+
+  delete from bicicleta where id_bicicleta = 1;
 
  create table dispositivos_moveis(
     id_dispositivosMoveis   serial  PRIMARY KEY not null,
