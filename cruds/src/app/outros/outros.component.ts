@@ -1,8 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-
-import { Outros } from '../model/outros';
 import { ApiService } from '../service/api.service';
 
 @Component({
@@ -68,7 +66,7 @@ export class OutrosComponent implements OnInit {
               this.dialogRef.close('Salvar');
             },
             error: () => {
-              alert("Erro ao cadastrar o produto!")
+              alert("Erro ao cadastrar Outros Bens!")
             }
           })
       }

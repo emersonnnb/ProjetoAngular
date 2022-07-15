@@ -83,6 +83,14 @@ create table outros(
     observacao        varchar(255)
  );
 
+insert into outros (situacao,classe,tipo,valorEstimado,numerodeSerie,marca,modelo,quantidade,unidadedeMedida,acondicionamento,descricao,apresentante,proprietario,observacao);
+values ('two','two','two',123,321,'teste','teste',3,'2L','teste','teste','maria','joão','teste');
+
+update outros set apresentante = 'Teste1'
+  where id_outros = 1;
+
+  delete from outros where id_outros = 1;
+
 
 
 
