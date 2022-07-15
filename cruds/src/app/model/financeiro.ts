@@ -7,7 +7,7 @@ export class Financeiro {
     quantidade!:                number;
     unidadedeMedida!:           string;
     valorEstimado!:             string;
-    moeda!:                     number;
+    moeda!:                     string;
     proprietarioTitular!:       string;
     descricao!:                 string;
     beneficiario!:              string;

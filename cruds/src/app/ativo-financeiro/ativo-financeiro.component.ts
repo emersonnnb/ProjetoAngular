@@ -21,7 +21,7 @@ export class AtivoFinanceiroComponent implements OnInit {
   ngOnInit(): void {
 
     this.formFinanceiro = this.formbuilder.group({
-      
+
       situacao: ['', Validators.required],
       classe: ['', Validators.required],
       tipo: ['', Validators.required],
@@ -64,7 +64,7 @@ export class AtivoFinanceiroComponent implements OnInit {
             next: (res) => {
               alert("Cadastrado com Sucesso!!");
               this.formFinanceiro.reset();
-              this.dialogRef.close('save');
+              this.dialogRef.close('Salvar');
             },
             error: () => {
               alert("Erro ao cadastrar o produto!")
