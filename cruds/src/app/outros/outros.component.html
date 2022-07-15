@@ -43,8 +43,8 @@
 
             <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
               <mat-label>Valor estimado</mat-label>
-              <input matInput formControlName="valorEstimado" prefix="R$ "
-              mask="0,00 || 00,00 || 000,00 || 0.000,00 || 00.000,00 || 000.000,00">
+              <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align : 'left' }"
+              placeholder="R$ 999.999,99" matInput formControlName="valorEstimado" />
             </mat-form-field>
 
             <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
