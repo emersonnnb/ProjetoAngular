@@ -1,19 +1,18 @@
-<form [formGroup]="formDispositivos">
-  <div class="m-4">
-    <div class="row">
-      <h1 class="fw-bold col-md-10 col-sm-1">Incluir dispositivo móvel</h1>
-      <button class="col-md-2 col-sm-6 bg-dark" [disabled]="formDispositivos.invalid" (click)="addDispositivos()"
-        mat-flat-button style="color: white;">
-        <mat-icon>save</mat-icon>Salvar
-      </button>
-    </div>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="formDispositivos">
+    <div class="m-4">
+      <div class="row">
+        <h1 class="fw-bold col-md-10 col-sm-1">Incluir Dispositos</h1>
+        <button class="col-md-2 col-sm-6 bg-dark" (click)="addDispositivos()" mat-flat-button style="color: white;">
+          <mat-icon style="font-size: 18px">save</mat-icon>{{actionBtn}}
+        </button>
+      </div>
 
-    <div class="position-relative">
-      <mat-tab-group [selectedIndex]="1" dynamicHeight>
-        <mat-tab label="Procedimento nº: 009-00999/AAAA" [disabled]="true"></mat-tab>
+      <div class="position-relative ">
+        <mat-tab-group [selectedIndex]="1" dynamicHeight>
+          <mat-tab label="Procedimento nº: 009-00999/AAAA" [disabled]="true"></mat-tab>
+          <mat-tab label="Identificação">
 
-        <mat-tab label="Identificação">
-          <mat-tab label="Dispositos cadastrados" ></mat-tab>
           <div class="row my-4">
 
             <mat-form-field class="col-md-2 col-12" appearance="outline" floatLabel="always">
@@ -77,16 +76,17 @@
             </mat-form-field>
           </div>
 
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <span>Delitos relacionados</span>
-            </ng-template>
-
-
-          </mat-tab>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span>Delitos relacionados</span>
+            <mat-icon class="head-icon">warning</mat-icon>
+          </ng-template>
         </mat-tab>
       </mat-tab-group>
-      <button class="exit-button button" mat-button>Sair</button>
+
+      <button (click)="closeDialog()" class="exit-button button d-none d-sm-block" mat-button>Sair</button>
     </div>
   </div>
 </form>
+</mat-dialog-content>

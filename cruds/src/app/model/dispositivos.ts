@@ -3,8 +3,8 @@ export class Dispositivos {
     situacao!:      string;
     apresentante!:  string;
     proprietario!:  string;
-    bloqueio!:      boolean;
-    seguro!:        boolean;
+    bloqueio!:      string;
+    seguro!:        string;
     observacao!:    string;
     seguradora!:    string;
 }

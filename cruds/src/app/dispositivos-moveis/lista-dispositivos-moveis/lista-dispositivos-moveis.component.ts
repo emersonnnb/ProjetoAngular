@@ -7,17 +7,16 @@ import { ApiService } from 'src/app/service/api.service';
 import { DispositivosMoveisComponent } from '../dispositivos-moveis.component';
 import { MatDialog } from '@angular/material/dialog';
 
+
 @Component({
   selector: 'app-lista-dispositivos-moveis',
   templateUrl: './lista-dispositivos-moveis.component.html',
   styleUrls: ['./lista-dispositivos-moveis.component.scss']
 })
-
 export class ListaDispositivosMoveisComponent implements OnInit {
 
   displayedColumns: string[] = ['situacao', 'apresentante', 'proprietario', 'seguro', 'bloqueio', 'observacao', 'seguradora', 'action'];
   dataSource!: MatTableDataSource<any>;
-
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -47,10 +46,11 @@ export class ListaDispositivosMoveisComponent implements OnInit {
           this.dataSource.sort = this.sort
         },
         error: (err) => {
-          alert("Erro ao listar produtos!")
+          alert("Erro ao listar Dispositivo!")
         }
       })
   }
+  
   editDispositivos(row: any) {
     this.dialog.open(DispositivosMoveisComponent, {
       width: '100%',
