@@ -53,7 +53,7 @@ export class DispositivosMoveisComponent implements OnInit {
             next: (res) => {
               alert("Cadastrado com Sucesso!!");
               this.formDispositivos.reset();
-              this.dialogRef.close('salvar');
+              this.dialogRef.close('Salvar');
             },
             error: () => {
               alert("Erro ao cadastrar o produto!")
