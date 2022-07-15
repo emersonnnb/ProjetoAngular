@@ -44,13 +44,13 @@ DROP TABLE artefato,ativo_financeiro,bicicleta,dispositivos_moveis,outros, SITUA
     marca           varchar(255),
     modelo          varchar(255),
     cor             varchar(255),
-    valorEstimado   decimal(10,2),
+    valorEstimado   number(10,2),
     chassi          varchar(255),
     apresentante    varchar(255),
     proprietario    varchar(255),
     observacao      varchar(255)
  );
- insert into bicicleta (situacao,marca,modelo,cor,valorEstimado,chassi,apresentante,proprietario,observacao)
+ insert into bicicleta ( situacao, marca, modelo, cor, valorEstimado, chassi, apresentante, proprietario,  observacao)
 values ('ativo','SHIMANO/CANGURU','GTS','Preta',3200.00,'hhh','Matheus','Robertin')
 3
 

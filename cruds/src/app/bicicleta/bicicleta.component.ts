@@ -53,15 +53,15 @@ export class BicicletaComponent implements OnInit {
   addBicicleta() {
     if (!this.editData) {
       if (this.formBicicleta.valid) {
-        this.api.postBicicleta({ ...this.formBicicleta.value, valorEstimado: Number(this.formBicicleta.value.valorEstimado) })
+        this.api.postBicicleta({ ...this.formBicicleta.value, valorEstimado: String(this.formBicicleta.value.valorEstimado) })
         .subscribe({
             next: (res) => {
               alert("Cadastrado com Sucesso!!");
               this.formBicicleta.reset();
-              this.dialogRef.close('salvar');
+              this.dialogRef.close('Salvar');
             },
             error: () => {
-              alert("Erro ao cadastrar o produto!")
+              alert("Erro ao cadastrar bicicleta!")
             }
           })
       }
