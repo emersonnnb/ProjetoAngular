@@ -53,8 +53,8 @@ export class BicicletaComponent implements OnInit {
   addBicicleta() {
     if (!this.editData) {
       if (this.formBicicleta.valid) {
-        this.api.postBicicleta(this.formBicicleta.value)
-          .subscribe({
+        this.api.postBicicleta({ ...this.formBicicleta.value, valorEstimado: Number(this.formBicicleta.value.valorEstimado) })
+        .subscribe({
             next: (res) => {
               alert("Cadastrado com Sucesso!!");
               this.formBicicleta.reset();
