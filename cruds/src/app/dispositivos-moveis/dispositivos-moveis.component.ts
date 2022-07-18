@@ -20,7 +20,6 @@ export class DispositivosMoveisComponent implements OnInit {
   }
   createForm(dispositivos: Dispositivos) {
     this.formDispositivos = new FormGroup({
-      id: new FormControl (''),
       situacao: new FormControl('', Validators.required),
       apresentante: new FormControl('', Validators.required),
       proprietario: new FormControl('', Validators.required),
@@ -30,8 +29,8 @@ export class DispositivosMoveisComponent implements OnInit {
       seguradora: new FormControl('', Validators.required),
     })
   }
-  
-   addDispositivos() {
+
+  addDispositivos() {
     if (this.formDispositivos.valid) {
       this.api.postDispositivos(this.formDispositivos.value)
         .subscribe({
@@ -41,6 +40,7 @@ export class DispositivosMoveisComponent implements OnInit {
             this.formDispositivos.reset();
           },
           error: () => {
+            console.log(this.formDispositivos.value)
             alert("Erro ao Cadastrar Dispositivos!!")
 
           }
@@ -55,6 +55,6 @@ export class DispositivosMoveisComponent implements OnInit {
     console.log(this.formDispositivos.value);
     this.createForm(new Dispositivos());
   }
-  
-  
+
+
 }
