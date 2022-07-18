@@ -13,8 +13,7 @@ describe('DispositivosMoveisComponent', () => {
 
 beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DispositivosMoveisComponent ];
-      MatRadioModule
+      declarations: [ DispositivosMoveisComponent ]
     })
     .compileComponents();
   });

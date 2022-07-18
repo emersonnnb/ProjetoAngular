@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Dispositivos } from '../model/dispositivos';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
 import { ApiService } from '../service/api.service';
 
 
@@ -11,50 +12,76 @@ import { ApiService } from '../service/api.service';
 })
 export class DispositivosMoveisComponent implements OnInit {
   formDispositivos!: FormGroup;
+  actionBtn: String = "Salvar"
 
-
-  constructor(private formbuilder: FormBuilder, private api: ApiService) { }
+  constructor(private formbuilder: FormBuilder, private api: ApiService, @Inject(MAT_DIALOG_DATA) public editData: any,
+    private dialogRef: MatDialogRef<DispositivosMoveisComponent>) { }
 
   ngOnInit(): void {
-    this.createForm(new Dispositivos());
-  }
-  createForm(dispositivos: Dispositivos) {
-    this.formDispositivos = new FormGroup({
-      situacao: new FormControl('', Validators.required),
-      apresentante: new FormControl('', Validators.required),
-      proprietario: new FormControl('', Validators.required),
-      bloqueio: new FormControl('', Validators.required),
-      seguro: new FormControl('', Validators.required),
-      observacao: new FormControl('', Validators.required),
-      seguradora: new FormControl('', Validators.required),
+
+    this.formDispositivos = this.formbuilder.group({
+
+      id: ['', Validators.required],
+      situacao: ['', Validators.required],
+      apresentante: ['', Validators.required],
+      proprietario: ['', Validators.required],
+      bloqueio: ['', Validators.required],
+      seguro: ['', Validators.required],
+      observacao: ['', Validators.required],
+      seguradora: ['', Validators.required],
     })
-  }
 
-  addDispositivos() {
-    if (this.formDispositivos.valid) {
-      this.api.postDispositivos(this.formDispositivos.value)
-        .subscribe({
-          next: (res) => {
-            alert("Dispositivos Cadastrado com Sucesso!!");
-            console.log(this.formDispositivos.value);
-            this.formDispositivos.reset();
-          },
-          error: () => {
-            console.log(this.formDispositivos.value)
-            alert("Erro ao Cadastrar Dispositivos!!")
-
-          }
-
-        })
+    if (this.editData) {
+      this.actionBtn = "Atualizar";
+      this.formDispositivos.controls['situacao'].setValue(this.editData.situacao);
+      this.formDispositivos.controls['apresentante'].setValue(this.editData.apresentante);
+      this.formDispositivos.controls['proprietario'].setValue(this.editData.proprietario);
+      this.formDispositivos.controls['bloqueio'].setValue(this.editData.bloqueio);
+      this.formDispositivos.controls['seguro'].setValue(this.editData.seguro);
+      this.formDispositivos.controls['observacao'].setValue(this.editData.observacao);
+      this.formDispositivos.controls['seguradora'].setValue(this.editData.seguradora);
 
     }
-
-  }
-
-  onSubmit() {
-    console.log(this.formDispositivos.value);
-    this.createForm(new Dispositivos());
   }
 
 
+  addDispositivos() {
+    if (!this.editData) {
+      if (this.formDispositivos.valid) {
+        this.api.postDispositivos(this.formDispositivos.value)
+          .subscribe({
+            next: (res) => {
+              alert("Cadastrado com Sucesso!!");
+              this.formDispositivos.reset();
+              this.dialogRef.close('Salvar');
+            },
+            error: () => {
+              alert("Erro ao cadastrar o produto!")
+            }
+          })
+      }
+    } else {
+      this.updateDispositivos();
+    }
+  }
+
+
+  updateDispositivos() {
+    this.api.putDispositivos(this.formDispositivos.value, this.editData.id)
+      .subscribe({
+        next: (res) => {
+          alert("Atualizado com Sucesso!")
+          this.formDispositivos.reset();
+          this.dialogRef.close('Atualizar')
+        },
+        error: () => {
+          alert("Erro ao atualizar!")
+        }
+      })
+  }
+  closeDialog() {
+    this.dialogRef.close();
+  }
 }
+
+

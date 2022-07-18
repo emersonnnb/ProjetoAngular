@@ -3,7 +3,7 @@ export class Outros {
   situacao!:          string;
   classe!:            string;
   tipo!:              string;
-  valorEstimado!:     number;
+  valorEstimado!:     string;
   numerodeSerie!:     number;
   marca!:             string;
   modelo!:            string;
