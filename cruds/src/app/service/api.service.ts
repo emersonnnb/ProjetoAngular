@@ -81,21 +81,17 @@ export class ApiService {
     return this.http.delete<any>(`${this.API}dispositivos/` + id);
   }
 
-
-
-
-
   /*Outros*/
   postOutros(data: Outros): Observable<unknown> {
-    return this.http.post<unknown>("http://localhost:3000/outros/", data);
+    return this.http.post<unknown>(`${this.API}outros/`, data);
   }
   getOutros(): Observable<Outros[]> {
-    return this.http.get<Outros[]>("http://localhost:3000/outros/");
+    return this.http.get<Outros[]>(`${this.API}outros/`);
   }
   putOutros(data: Outros, id: number | undefined) {
-    return this.http.put<Outros>("http://localhost:3000/outros/" + id, data);
+    return this.http.put<Outros>(`${this.API}outros/` + id, data);
   }
   deleteOutros(id: any): Observable<Outros[]> {
-    return this.http.delete<any>("http://localhost:3000/outros/" + id);
+    return this.http.delete<any>(`${this.API}outros/` + id);
   }
 }
