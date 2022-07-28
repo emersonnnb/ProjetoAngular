@@ -20,7 +20,9 @@ export class ListaArtefatoComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private dialog: MatDialog, private api: ApiService) { }
+  constructor(
+    private dialog: MatDialog,
+    private api: ApiService) { }
 
   ngOnInit(): void {
     this.getAllArtefatos();
@@ -45,7 +47,9 @@ export class ListaArtefatoComponent implements OnInit {
           this.dataSource.sort = this.sort
         },
         error: (err) => {
-          alert("Erro ao listar Artefato!")
+          if (err.status == 500) {
+            alert("Erro ao conectar com a API!!")
+          }
         }
       })
   }

@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { catchError, throwError } from 'rxjs';
 
 import { ApiService } from '../service/api.service';
 
@@ -14,7 +16,10 @@ export class ArtefatoComponent implements OnInit {
   formArtefato!: FormGroup;
   actionBtn: String = "Salvar"
 
-  constructor(private formbuilder: FormBuilder, private api: ApiService, @Inject(MAT_DIALOG_DATA) public editData: any,
+  constructor(
+    private formbuilder: FormBuilder,
+    private api: ApiService,
+    @Inject(MAT_DIALOG_DATA) public editData: any,
     private dialogRef: MatDialogRef<ArtefatoComponent>) { }
 
   ngOnInit(): void {
@@ -55,8 +60,11 @@ export class ArtefatoComponent implements OnInit {
               this.formArtefato.reset();
               this.dialogRef.close('Salvar');
             },
-            error: () => {
-              alert("Erro ao cadastrar o produto!")
+            error: (err) => {
+              if (err.status == 409) {
+                alert("Dados ja cadastro para esse proprietário!!")
+              }
+
             }
           })
       }
@@ -69,16 +77,37 @@ export class ArtefatoComponent implements OnInit {
 
   updateArtefato() {
     this.api.putArtefato(this.formArtefato.value, this.editData.id)
+
       .subscribe({
         next: (res) => {
           alert("Atualizado com Sucesso!")
           this.formArtefato.reset();
           this.dialogRef.close('Atualizar')
         },
-        error: () => {
-          alert("Erro ao atualizar!")
+        error: (err) => {
+          if (err.status == 409) {
+            alert("Dados ja cadastro para esse proprietário!!")
+          }
         }
       })
+  }
+
+  private getServerErrorMessage(error: HttpErrorResponse): string {
+    switch (error.status) {
+      case 404: {
+        return `Not Found: ${error.message}`;
+      }
+      case 403: {
+        return `Access Denied: ${error.message}`;
+      }
+      case 500: {
+        return `Internal Server Error: ${error.message}`;
+      }
+      default: {
+        return `Unknown Server Error: ${error.message}`;
+      }
+
+    }
   }
 
   closeDialog() {
