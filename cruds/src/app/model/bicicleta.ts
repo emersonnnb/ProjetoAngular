@@ -4,7 +4,7 @@ export class Bicicleta {
   marca!:         string;
   modelo!:        string;
   cor!:           string;
-  valorEstimado!: string;
+  valorEstimado!: number;
   chassi!:        string;
   apresentante!:  string;
   proprietario!:  string;
