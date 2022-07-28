@@ -35,6 +35,8 @@ import {
 import { IndexPageComponent } from './index-page/index-page.component';
 import { ListaOutrosComponent } from './outros/lista-outros/lista-outros.component';
 import { OutrosComponent } from './outros/outros.component';
+import { DialogComponent } from './dialog/dialog.component';
+
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import { OutrosComponent } from './outros/outros.component';
     ListaArtefatoComponent,
     ListaAtivoFinanceiroComponent,
     ListaDispositivosMoveisComponent,
-    ListaOutrosComponent
+    ListaOutrosComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

@@ -78,10 +78,6 @@ export class ApiService {
     return this.http.delete<any>("http://localhost:3000/dispositivos/" + id);
   }
 
-
-
-
-
   /*Outros*/
   postOutros(data: Outros): Observable<unknown> {
     return this.http.post<unknown>("http://localhost:3000/outros/", data);
