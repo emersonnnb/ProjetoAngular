@@ -65,8 +65,10 @@ export class OutrosComponent implements OnInit {
               this.formOutros.reset();
               this.dialogRef.close('Salvar');
             },
-            error: () => {
-              alert("Erro ao cadastrar Outros Bens!")
+            error: (err) => {
+              if (err.status == 409) {
+                alert("Dados ja cadastro para esse proprietário!!")
+              }
             }
           })
       }
@@ -84,9 +86,10 @@ export class OutrosComponent implements OnInit {
           this.formOutros.reset();
           this.dialogRef.close('Atualizar')
         },
-        error: () => {
-
-          alert("Erro ao atualizar!")
+        error: (err) => {
+          if (err.status == 409) {
+            alert("Dados ja cadastro para esse proprietário!!")
+          }
         }
       })
   }
