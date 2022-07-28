@@ -14,7 +14,7 @@ import { Artefato } from './../model/artefato';
 })
 export class ApiService {
 
-  private readonly API = environment.API
+  private readonly API = environment.API;
 
   constructor(private http: HttpClient) { }
 
