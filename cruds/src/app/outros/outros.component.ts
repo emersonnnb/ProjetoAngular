@@ -14,25 +14,25 @@ export class OutrosComponent implements OnInit {
   actionBtn: String = "Salvar"
 
   constructor(private formbuilder: FormBuilder, private api: ApiService, @Inject(MAT_DIALOG_DATA) public editData: any,
-  private dialogRef: MatDialogRef<OutrosComponent>) { }
+    private dialogRef: MatDialogRef<OutrosComponent>) { }
 
   ngOnInit(): void {
     this.formOutros = this.formbuilder.group({
 
-      situacao:         ['', Validators.required],
-      classe:           ['', Validators.required],
-      tipo:             ['', Validators.required],
-      valorEstimado:    ['', Validators.required],
-      numerodeSerie:    ['', Validators.required],
-      marca:            ['', Validators.required],
-      modelo:           ['', Validators.required],
-      quantidade:       ['', Validators.required],
-      unidadedeMedida:  ['', Validators.required],
+      situacao: ['', Validators.required],
+      classe: ['', Validators.required],
+      tipo: ['', Validators.required],
+      valorEstimado: ['', Validators.required],
+      numerodeSerie: ['', Validators.required],
+      marca: ['', Validators.required],
+      modelo: ['', Validators.required],
+      quantidade: ['', Validators.required],
+      unidadedeMedida: ['', Validators.required],
       acondicionamento: ['', Validators.required],
-      descricao:        ['', Validators.required],
-      apresentante:     ['', Validators.required],
-      proprietario:     ['', Validators.required],
-      observacao:       ['', Validators.required],
+      descricao: ['', Validators.required],
+      apresentante: ['', Validators.required],
+      proprietario: ['', Validators.required],
+      observacao: ['', Validators.required],
     });
 
     if (this.editData) {
@@ -65,8 +65,10 @@ export class OutrosComponent implements OnInit {
               this.formOutros.reset();
               this.dialogRef.close('Salvar');
             },
-            error: () => {
-              alert("Erro ao cadastrar Outros Bens!")
+            error: (err) => {
+              if (err.status == 409) {
+                alert("Dados ja cadastro para esse proprietário!!")
+              }
             }
           })
       }
@@ -84,8 +86,10 @@ export class OutrosComponent implements OnInit {
           this.formOutros.reset();
           this.dialogRef.close('Atualizar')
         },
-        error: () => {
-          alert("Erro ao atualizar!")
+        error: (err) => {
+          if (err.status == 409) {
+            alert("Dados ja cadastro para esse proprietário!!")
+          }
         }
       })
   }
