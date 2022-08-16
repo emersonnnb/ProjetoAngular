@@ -1,4 +1,5 @@
-::ng-deep.mat-tab-group.mat-primary .mat-ink-bar, ::ng-deep.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+::ng-deep.mat-tab-group.mat-primary .mat-ink-bar,
+::ng-deep.mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: #e8c218;
 }
 
@@ -7,7 +8,6 @@
   border-bottom: 4px solid #d8d8d8;
 }
 
-
 ::ng-deep.mat-ink-bar {
   height: 4px !important;
 }
@@ -15,17 +15,17 @@
 ::ng-deep.mat-tab-header {
   margin-left: 1px;
   .mat-tab-label-container {
-      margin-bottom: 0px;
-      .mat-tab-labels {
-        .mat-tab-label {
-          padding: 0 4px 0 4px !important;
-          min-width: 10px;
-          margin-left: 0px;
-        }
+    margin-bottom: 0px;
+    .mat-tab-labels {
+      .mat-tab-label {
+        padding: 0 4px 0 4px !important;
+        min-width: 10px;
+        margin-left: 0px;
       }
+    }
   }
 }
-.exit-button{
+.exit-button {
   position: absolute;
   top: 8px;
   right: 0px;
@@ -34,37 +34,36 @@
   min-width: 35px;
   padding: 0;
   color: #817e7e;
-  }
-.return-button{
-    position: absolute;
-    top: 8px;
-    right: 50px;
-    border-radius: 0;
-    z-index: 1;
-    min-width: 35px;
-    padding: 0;
-    color: #817e7e;
-    }
-.button:hover{
-   border-bottom: 4px solid red;
+}
+.return-button {
+  position: absolute;
+  top: 8px;
+  right: 50px;
+  border-radius: 0;
+  z-index: 1;
+  min-width: 35px;
+  padding: 0;
+  color: #817e7e;
+}
+.button:hover {
+  border-bottom: 4px solid red;
 }
 
-.head-icon{
+.head-icon {
   margin: 0 0 0 7px;
   color: orange;
   font-size: 18px;
 }
 
-::ng-deep .mat-dialog-container{
+::ng-deep .mat-dialog-container {
   padding: 0 !important;
 }
 
-::ng-deep .mat-dialog-content{
+::ng-deep .mat-dialog-content {
   display: inline !important;
 }
 
-::ng-deep .cdk-overlay-pane{
+::ng-deep .cdk-overlay-pane {
   max-width: 95% !important;
   // height: 95% !important;
 }
-

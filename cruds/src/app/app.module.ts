@@ -1,4 +1,3 @@
-//teste
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -35,9 +34,6 @@ import {
 import { IndexPageComponent } from './index-page/index-page.component';
 import { ListaOutrosComponent } from './outros/lista-outros/lista-outros.component';
 import { OutrosComponent } from './outros/outros.component';
-import { DialogComponent } from './dialog/dialog.component';
-
-
 
 @NgModule({
   declarations: [
@@ -53,7 +49,7 @@ import { DialogComponent } from './dialog/dialog.component';
     ListaAtivoFinanceiroComponent,
     ListaDispositivosMoveisComponent,
     ListaOutrosComponent,
-    DialogComponent
+
   ],
   imports: [
     BrowserModule,

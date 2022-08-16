@@ -13,6 +13,8 @@ import { ApiService } from '../service/api.service';
 })
 export class ArtefatoComponent implements OnInit {
 
+
+  createdAt!: number;
   formArtefato!: FormGroup;
   actionBtn: String = "Salvar"
 
@@ -20,10 +22,13 @@ export class ArtefatoComponent implements OnInit {
     private formbuilder: FormBuilder,
     private api: ApiService,
     @Inject(MAT_DIALOG_DATA) public editData: any,
-    private dialogRef: MatDialogRef<ArtefatoComponent>) { }
+    private dialogRef: MatDialogRef<ArtefatoComponent>) {
+
+  }
 
   ngOnInit(): void {
 
+    this.createdAt = 11;
     this.formArtefato = this.formbuilder.group({
       situacao: ['', Validators.required],
       classe: ['', Validators.required],
@@ -34,6 +39,7 @@ export class ArtefatoComponent implements OnInit {
       proprietario: ['', Validators.required],
       descricao: ['', Validators.required],
       observacao: ['', Validators.required],
+      createdAt: [''],
     });
 
     if (this.editData) {
@@ -53,6 +59,7 @@ export class ArtefatoComponent implements OnInit {
   addArtefato() {
     if (!this.editData) {
       if (this.formArtefato.valid) {
+        console.log(this.formArtefato.value)
         this.api.postArtefato({ ...this.formArtefato.value, valorEstimado: Number(this.formArtefato.value.valorEstimado) })
           .subscribe({
             next: (res) => {
