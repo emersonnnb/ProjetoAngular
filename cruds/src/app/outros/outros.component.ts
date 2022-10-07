@@ -13,8 +13,12 @@ export class OutrosComponent implements OnInit {
   formOutros!: FormGroup;
   actionBtn: String = "Salvar"
 
-  constructor(private formbuilder: FormBuilder, private api: ApiService, @Inject(MAT_DIALOG_DATA) public editData: any,
-    private dialogRef: MatDialogRef<OutrosComponent>) { }
+  constructor(
+    private formbuilder: FormBuilder,
+    private api: ApiService, @Inject(MAT_DIALOG_DATA)
+    public editData: any,
+    private dialogRef: MatDialogRef<OutrosComponent>
+    ) { }
 
   ngOnInit(): void {
     this.formOutros = this.formbuilder.group({
