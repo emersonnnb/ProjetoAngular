@@ -50,32 +50,50 @@
               <mat-label>Valor estimado</mat-label>
               <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align : 'left' }"
               placeholder="R$ 999.999,99" matInput formControlName="valorEstimado" />
+              <mat-error *ngIf="formOutros.controls['valorEstimado'].errors">
+                Digite o valor do Objeto
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
               <mat-label>N° de Série</mat-label>
               <input matInput type="number" formControlName="numerodeSerie">
+              <mat-error *ngIf="formOutros.controls['numerodeSerie'].errors">
+                Digite o númerode de serie do Objeto
+              </mat-error>
             </mat-form-field>
 
         <!--Linha 2/Segunda linha-->
             <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
               <mat-label>Marca</mat-label>
               <input matInput formControlName="marca">
+              <mat-error *ngIf="formOutros.controls['marca'].errors">
+                Digite a marca do Objeto
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
               <mat-label>Modelo</mat-label>
               <input matInput formControlName="modelo">
+              <mat-error *ngIf="formOutros.controls['modelo'].errors">
+                Digite o modelo do Objeto
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
               <mat-label>Quantidade </mat-label>
               <input matInput type="number" formControlName="quantidade" placeholder="999.999">
+              <mat-error *ngIf="formOutros.controls['quantidade'].errors">
+                Digite a quantidade de Objeto
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
               <mat-label>Unidade de Medida </mat-label>
               <input matInput formControlName="unidadedeMedida" placeholder="Unitário">
+              <mat-error *ngIf="formOutros.controls['unidadedeMedida'].errors">
+                Digite uma unidade de medida
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
@@ -91,16 +109,25 @@
               <mat-label>Descrição </mat-label>
               <textarea matInput rows="5" formControlName="descricao" placeholder="Ex. It makes me feel">
               </textarea>
+              <mat-error *ngIf="formOutros.controls['descricao'].errors">
+                Digite a descrição  do Objeto
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field class="col-md-2 col-sm-12" floatLabel="always" appearance="outline">
               <mat-label>Apresentante </mat-label>
               <input matInput formControlName="apresentante" placeholder="Maria da Silva">
+              <mat-error *ngIf="formOutros.controls['apresentante'].errors">
+                Digite o nome do apresentante
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field class="col-md-3 col-sm-12" floatLabel="always" appearance="outline">
               <mat-label>Proprietário </mat-label>
               <input matInput formControlName="proprietario" placeholder="Maria da Silva">
+              <mat-error *ngIf="formOutros.controls['proprietario'].errors">
+                Digite o nome do proprietario
+              </mat-error>
             </mat-form-field>
 
         <!--Linha 4/Quarta linha-->
@@ -108,6 +135,9 @@
               <mat-label>Observação</mat-label>
               <textarea matInput rows="5"  formControlName="observacao" placeholder="Ex. It makes me feel...">
               </textarea>
+              <mat-error *ngIf="formOutros.controls['observacao'].errors">
+                Digite a observação do Objeto
+              </mat-error>
             </mat-form-field>
           </div>
           </mat-tab>

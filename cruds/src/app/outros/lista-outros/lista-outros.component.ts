@@ -60,7 +60,7 @@ export class ListaOutrosComponent implements OnInit {
       }
     })
   }
-  
+
   deleteOutros(id: number) {
     this.api.deleteOutros(id)
       .subscribe({
